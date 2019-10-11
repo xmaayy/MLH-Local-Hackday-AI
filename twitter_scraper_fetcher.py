@@ -22,8 +22,10 @@ def get_elements(twitter_handle: str):
     
 def get_user_tweets(twitter_handle):
     elements = get_elements(twitter_handle)
+    tweets = [[text.string for text in post.contents 
+              if text.string not in EMPTY_ITEMS] for 
+              post in elements]
     tweets = []
-
     for post in elements:
         for text in post.contents:
             # Check if line contains actual text
