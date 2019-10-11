@@ -21,12 +21,12 @@ def get_elements(twitter_handle: str):
     return soup.find_all(CONTENT_CONTAINER_TAGS, 	attrs={"class": CONTENT_CLASS_NAME})
     
 def get_user_tweets(twitter_handle):
-  ## Nothing here yet!
-  pass
+    elements = get_elements(twitter_handle)
+    pass
 
 def clean_tweets_data(tweets):
-  ## Nothing here yet!
-  pass
+    ## Nothing here yet!
+    pass
     
   
             
