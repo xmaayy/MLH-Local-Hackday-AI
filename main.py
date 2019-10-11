@@ -36,5 +36,5 @@ def generate_message(body, methods=["POST"]):
     socketio.emit("error", {"username": twitter_handle, "message": bot_answer})
 
 if __name__ == "__main__":
-    socketio.run(app)
+    socketio.run(app, port=3434)
 
