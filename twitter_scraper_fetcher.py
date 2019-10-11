@@ -28,7 +28,7 @@ def get_user_tweets(twitter_handle):
             # Check if line contains actual text
             if text.string not in EMPTY_ITEMS:
                 tweets.append(text.string)
-    pass
+    return tweets
 
 def clean_tweets_data(tweets):
     ## Nothing here yet!
