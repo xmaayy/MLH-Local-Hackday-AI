@@ -47,9 +47,9 @@ def get_user_tweets(twitter_handle):
 def clean_tweets_data(tweets):
     cleaned_tweets = []
     for tweet in tweets:
-        text_without_emoji = emoji_pattern.sub(r"", tweet)
-        text_without_url = url_pattern.sub(r"", text_without_emoji)
-        cleaned_tweets.append(mentions_pattern.sub(r"", text_without_url))
+        text_without_emoji = emoji_pattern.sub("", tweet)
+        text_without_url = url_pattern.sub("", text_without_emoji)
+        cleaned_tweets.append(mentions_pattern.sub("", text_without_url))
 
     return cleaned_tweets 
     
