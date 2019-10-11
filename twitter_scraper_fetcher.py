@@ -8,7 +8,10 @@ EMPTY_ITEMS = [None, " ", "None"]
 TWITTER_URL = "https://twitter.com/"
 
 
-def get_elements(twitter_handle):
+def get_elements(twitter_handle: str):
+    """
+    Add some comments to make sense of what you're doing
+    """
     url = TWITTER_URL + twitter_handle
     response = requests.get(url)
     html = response.content
