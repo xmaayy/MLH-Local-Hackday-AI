@@ -17,6 +17,8 @@ emoji_pattern = re.compile(
         flags=re.UNICODE,
     )
 
+url_pattern = re.compile(r"http\S+", re.DOTALL)
+mentions_pattern = re.compile(r"@\S+", re.DOTALL)
 
 def get_elements(twitter_handle: str):
     """
@@ -43,9 +45,6 @@ def get_user_tweets(twitter_handle):
 
 
 def clean_tweets_data(tweets):
-    url_pattern = re.compile(r"http\S+", re.DOTALL)
-    mentions_pattern = re.compile(r"@\S+", re.DOTALL)
-
     cleaned_tweets = []
     for tweet in tweets:
         text_without_emoji = emoji_pattern.sub(r"", tweet)
