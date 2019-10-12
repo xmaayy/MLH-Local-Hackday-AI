@@ -1,5 +1,6 @@
 import markovify
 import config
+import random
 from mlh_twitter_api import get_user_tweets as fetch
 from twitter_scraper_fetcher import *
 import re
@@ -24,6 +25,7 @@ def generate_bot_answer_with_text_model(text_model, user_question,
     random_word = random.choice(word_list)
     bot_answer = text_model.make_sentence_with_start(
         random_word, strict=False)
+    print("We cool")
     return bot_answer
 
 
