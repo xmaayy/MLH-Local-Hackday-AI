@@ -17,8 +17,7 @@ def create_string(tweets):
 
 
 def generate_bot_answer_with_text_model(text_model):
-    pass
-    ## write code here
+    bot_answer = None
 
       
 # build the markov chain based on the text we read
