@@ -16,7 +16,8 @@ def create_string(tweets):
     return text
 
 
-def generate_bot_answer_with_text_model(text_model):
+def generate_bot_answer_with_text_model(text_model, user_question,
+        twitter_handle):
     bot_answer = None
     
     word_list = user_question.split(" ")
