@@ -18,6 +18,8 @@ def create_string(tweets):
 
 def generate_bot_answer_with_text_model(text_model):
     bot_answer = None
+    
+    word_list = user_question.split(" ")
 
       
 # build the markov chain based on the text we read
