@@ -34,7 +34,7 @@ def generate_bot_answer_with_text_model(twitter_handle, user_question,
 # build the markov chain based on the text we read
 # we use the markovify library to do this step
 def generate_bot_answer(twitter_handle, user_question):
-    tweets = get_user_tweets(twitter_handle)
+    tweets = fetch(twitter_handle)
     clean_tweets = clean_tweets_data(tweets)
     text = "".join(map(str, clean_tweets))
     text_model = markovify.Text(text)
