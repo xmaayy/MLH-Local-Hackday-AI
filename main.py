@@ -5,6 +5,7 @@ from content_moderator import moderate
 import json
 import config
 import random
+from markov import *
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -27,7 +28,8 @@ def generate_message(body, methods=["POST"]):
     # Get a random tweet from the list of tweets
     cleaned_tweets = clean_tweets_data(tweets)
     single_tweet = random.choice(cleaned_tweets)
-    bot_answer = moderate(single_tweet)
+    bot_answer = generate_bot_answer(twitter_handle, question)
+    moderated_answer = moderate(bot_answer)
 
     # Send the answer to the app, to display to the user
     answer = {"username": twitter_handle, "message": bot_answer}

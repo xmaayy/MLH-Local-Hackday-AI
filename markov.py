@@ -28,8 +28,6 @@ def generate_bot_answer_with_text_model(text_model, user_question,
     print("We cool")
     return bot_answer
 
-
-
       
 # build the markov chain based on the text we read
 # we use the markovify library to do this step
