@@ -21,6 +21,7 @@ def generate_bot_answer_with_text_model(text_model):
     
     word_list = user_question.split(" ")
     random_word = random.choice(word_list)
+    bot_answer = text_model.make_sentence_with_start()
 
 
       
