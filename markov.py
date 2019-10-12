@@ -20,6 +20,8 @@ def generate_bot_answer_with_text_model(text_model):
     bot_answer = None
     
     word_list = user_question.split(" ")
+    random_word = random.choice(word_list)
+
 
       
 # build the markov chain based on the text we read
