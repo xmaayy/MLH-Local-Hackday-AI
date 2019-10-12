@@ -38,3 +38,6 @@ def generate_bot_answer(twitter_handle, user_question):
     clean_tweets = clean_tweets_data(tweets)
     text = "".join(map(str, clean_tweets))
     text_model = markovify.Text(text)
+    bot_answer = generate_bot_answer_with_text_model(
+        twitter_handle, user_question, text_model)
+    return bot_answer
