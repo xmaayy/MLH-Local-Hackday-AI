@@ -17,15 +17,17 @@ def create_string(tweets):
     return text
 
 
-def generate_bot_answer_with_text_model(text_model, user_question,
-        twitter_handle):
+def generate_bot_answer_with_text_model(twitter_handle, user_question,
+        text_model):
     bot_answer = None
     
     word_list = user_question.split(" ")
     random_word = random.choice(word_list)
     bot_answer = text_model.make_sentence_with_start(
         random_word, strict=False)
-    print("We cool")
+    if bot_answer == None:
+      bot_answer = text_model.make_sentence(test_output=False)
+
     return bot_answer
 
       

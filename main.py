@@ -34,7 +34,8 @@ def generate_message(body, methods=["POST"]):
     # Send the answer to the app, to display to the user
     answer = {"username": twitter_handle, "message": bot_answer}
     socketio.emit("bot answer", answer)
-  except:
+  except Exception as e:
+    print(e)
     bot_answer = "Sorry, I couldn't process that. Try again please."
     socketio.emit("error", {"username": twitter_handle, "message": bot_answer})
 
